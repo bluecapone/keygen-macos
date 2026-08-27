@@ -1,0 +1,20 @@
+{
+  "name": "keygen-macos",
+  "version": "1.0.0",
+  "description": "Six macOS skills for generating, handling, and auditing SSH keys, Git signing keys, Keychain credentials, and random secrets without leaking values into agent logs.",
+  "author": {
+    "name": "bluecapone",
+    "url": "https://github.com/bluecapone"
+  },
+  "homepage": "https://github.com/bluecapone/keygen-macos",
+  "repository": "https://github.com/bluecapone/keygen-macos",
+  "license": "MIT",
+  "keywords": [
+    "macos",
+    "ssh",
+    "keychain",
+    "secrets",
+    "commit-signing",
+    "security"
+  ]
+}
