@@ -1,0 +1,24 @@
+{
+  "name": "keygen-macos",
+  "owner": {
+    "name": "bluecapone",
+    "url": "https://github.com/bluecapone"
+  },
+  "metadata": {
+    "description": "Marketplace hosting the keygen-macos skills plugin."
+  },
+  "plugins": [
+    {
+      "name": "keygen-macos",
+      "description": "Six macOS skills for generating, handling, and auditing SSH keys, Git signing keys, Keychain credentials, and random secrets without leaking values into agent logs.",
+      "version": "1.0.0",
+      "author": {
+        "name": "bluecapone",
+        "url": "https://github.com/bluecapone"
+      },
+      "source": "./",
+      "category": "security",
+      "homepage": "https://github.com/bluecapone/keygen-macos"
+    }
+  ]
+}

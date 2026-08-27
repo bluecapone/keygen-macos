@@ -53,6 +53,10 @@ One repo, installed once, available in every project:
 npx skills add bluecapone/keygen-macos
 ```
 
+Uses the [vercel-labs/skills](https://github.com/vercel-labs/skills) CLI. Add `-l` to list
+what a repo offers without installing, `--all` to take everything, or `-g` for a
+user-level install.
+
 ### Manual symlink (any agent)
 
 Clone once, symlink into whichever agent directories you use. This is the portable path -
@@ -82,6 +86,19 @@ fails CI rather than quietly rotting:
 - `description` is third person, 1024 characters or fewer, and states *when* to fire
 - body is 500 lines or fewer
 - no credential-shaped strings anywhere in the tree
+
+Checked against this repo at publish time: `check-skills.sh` reports 6/6 passing and runs
+clean under bash 3.2. A fresh `git clone` of the published repo passes the validator with
+script mode bits intact and links all six skills via `install.sh --project`.
+`npx skills add bluecapone/keygen-macos -l` clones the public repo and resolves all six
+skills with their descriptions.
+
+Every command inside the skills was executed on macOS 26.6 with Apple OpenSSH 10.3p1,
+OpenSSL 3.6.3, GnuPG 2.5.18, and git 2.53.0 - 66 assertions covering key generation,
+passphrase detection, Keychain round-trips, secret encoding, and a full SSH commit-signing
+verification matrix. That pass caught three real defects before release: a gawk-only
+`awk strftime` call that fails on macOS BWK awk, an `install.sh --uninstall` scope bug, and
+an incorrect explanation of `No principal matched` in the signing skill.
 
 ## Authoring conventions
 
